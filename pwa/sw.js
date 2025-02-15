@@ -16,7 +16,8 @@ self.addEventListener("install", (event) => {
         "/script/export.js",
         "/script/generateTable.js",
         "/script/main.js",
-        "/pwa/icon.png",
+        "/pwa/icon192.png",
+        "/pwa/icon512.png",
       ]);
     })
   );

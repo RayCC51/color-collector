@@ -41,6 +41,7 @@ function generateTable(data) {
       if (cell.length > 0) {
         td.id = "z" + cell.slice(1).toUpperCase();
         td.style.backgroundColor = cell;
+        td.style.color = "#" + contrastingColor(cell.slice(1));
       }
 
       tr.appendChild(td); // 행에 셀 추가
@@ -116,6 +117,7 @@ function addClickEventToCells() {
             if (/^[0-9a-fA-F]+$/.test(newId)) {
               this.id = "z" + newId.toUpperCase();
               this.style.backgroundColor = "#" + newId;
+              this.style.color = contrastingColor(newId);
               addInnerHTML(this, "#" + newId);
             } else {
               console.log("invalid color: ", newId);

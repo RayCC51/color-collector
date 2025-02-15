@@ -33,6 +33,8 @@ function generateTable(data) {
         td.id = "z" + cell.slice(1).toUpperCase();
         td.style.backgroundColor = cell;
         td.style.color = "#" + contrastingColor(cell.slice(1));
+      } else {
+        td.innerHTML = "<p>*</p>";
       }
 
       tr.appendChild(td); // 행에 셀 추가
@@ -43,6 +45,7 @@ function generateTable(data) {
     for (let i = 0; i < emptyCellsCount; i++) {
       const emptyTd = document.createElement("td"); // 빈 셀 생성
       emptyTd.classList.add("colorBox");
+      emptyTd.innerHTML = "<p>*</p>";
       tr.appendChild(emptyTd); // 행에 빈 셀 추가
     }
 

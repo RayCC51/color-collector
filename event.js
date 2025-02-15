@@ -18,7 +18,7 @@ function addClickEventToCells() {
       input.style.width = "100%"; // 입력 필드 너비 100%
 
       // 셀의 내용을 비우고 입력 필드 추가
-      this.innerHTML = "";
+      this.innerHTML = "#";
       this.appendChild(input);
 
       // 입력 필드에 포커스
@@ -60,7 +60,7 @@ function addClickEventToCells() {
             } else {
               console.log("invalid color: ", newId);
               // remove
-              this.innerHTML = "";
+              this.innerHTML = "*";
               this.id = "";
               this.removeAttribute("style");
             }
@@ -68,7 +68,7 @@ function addClickEventToCells() {
             this.innerHTML = "#" + currentId; // 유효하지 않은 경우 원래 ID로 복원
           }
         } else {
-          this.innerHTML = "";
+          this.innerHTML = "*";
           this.removeAttribute("id");
           this.removeAttribute("style");
         }

@@ -10,10 +10,15 @@ body {
   }
 }
 
+#info {
+  margin-bottom: 1em !important;
+}
+
 label,
 input,
 button {
   user-select: none;
+  margin: 0.3em 0 !important;
 }
 
 table {
@@ -54,8 +59,4 @@ td {
   text-align: center;
   margin: 0;
   padding: 0;
-}
-
-#info {
-  margin-bottom: 1em !important;
 }

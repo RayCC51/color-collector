@@ -16,6 +16,13 @@
       </form>
       <button type="button" id="hideText">Hide Text</button>
       <button type="button" id="clearTable">Clear Table</button>
+      <br />
+      <label for="rowIndex">Row index:</label>
+      <input type="number" id="rowIndex" value="0" min="0" />
+      <button onclick="insertRow()">Insert</button>
+      <label for="colIndex">Column index:</label>
+      <input type="number" id="colIndex" value="0" min="0" />
+      <button onclick="insertColumn()">Insert</button>
     </div>
 
     <div id="tableContainer"></div>
@@ -23,6 +30,7 @@
     <script src="lib/parsingCSV.js"></script>
     <script src="lib/ntc.js"></script>
     <script src="lib/blackwhite.js"></script>
+    <script src="expandTable.js"></script>
     <script src="script.js"></script>
     <script src="export.js"></script>
   </body>

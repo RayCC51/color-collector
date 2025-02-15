@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>color collector</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form id="fileContainer">
+      <label for="fileInput">Open your <em>.csv</em> file: </label>
+      <input type="file" id="fileInput" accept=".csv" />
+      <label for="fileOutput">Download your file <em>.csv</em></label>
+      <button type="button" id="fileOutput">Download</button>
+    </form>
+
+    <div id="tableContainer"></div>
+
+    <script src="lib/parsingCSV.js"></script>
+    <script src="lib/ntc.js"></script>
+    <script src="script.js"></script>
+    <script src="export.js"></script>
+  </body>
+</html>

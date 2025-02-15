@@ -101,6 +101,8 @@ function addClickEventToCells() {
             // length check
             if (newId.length > 6) {
               newId = newId.slice(0, 6);
+            } else if (newId.length === 6) {
+              newId = newId;
             } else if (newId.length === 3) {
               newId = newId
                 .split("")

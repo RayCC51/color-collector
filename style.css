@@ -10,10 +10,16 @@ body {
   }
 }
 
+label,
+input,
+button {
+  user-select: none;
+}
+
 table {
   border: 0;
+  width: auto;
   border-collapse: collapse;
-  width: 100%;
 }
 
 tr,
@@ -21,7 +27,15 @@ td {
   border: 0;
   text-align: center;
   height: 4em;
-  width: 15%;
+}
+
+td {
+  width: 10em;
+}
+
+#tableContainer {
+  overflow: auto;
+  width: 100%;
 }
 
 .colorName,

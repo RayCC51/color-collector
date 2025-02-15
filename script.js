@@ -1,3 +1,20 @@
+document.getElementById("hideText").addEventListener("click", function () {
+  const tds = document.querySelectorAll("td");
+
+  tds.forEach((td) => {
+    const paragraphs = td.querySelectorAll("p");
+    paragraphs.forEach((p) => {
+      // console.log(p.textContent); // 각 p 요소의 텍스트를 출력
+
+      if (p.hasAttribute("hidden")) {
+        p.removeAttribute("hidden");
+      } else {
+        p.setAttribute("hidden", "");
+      }
+    });
+  });
+});
+
 document
   .getElementById("fileInput")
   .addEventListener("change", function (event) {
@@ -86,6 +103,7 @@ function addClickEventToCells() {
 
       // 입력 필드에 포커스
       input.focus();
+      input.select();
 
       // 입력 필드에서 포커스 아웃 시 ID 수정
       input.addEventListener("blur", () => {
@@ -117,7 +135,7 @@ function addClickEventToCells() {
             if (/^[0-9a-fA-F]+$/.test(newId)) {
               this.id = "z" + newId.toUpperCase();
               this.style.backgroundColor = "#" + newId;
-              this.style.color = contrastingColor(newId);
+              this.style.color = "#" + contrastingColor(newId);
               addInnerHTML(this, "#" + newId);
             } else {
               console.log("invalid color: ", newId);
@@ -140,6 +158,13 @@ function addClickEventToCells() {
       input.addEventListener("keydown", (event) => {
         if (event.key === "Enter") {
           input.blur(); // 포커스 아웃
+        } else if (event.key === "Escape") {
+          // Esc 키를 눌렀을 때 원래 ID로 복원
+          this.innerHTML = "#" + currentId; // 원래 ID로 복원
+
+          this.style.backgroundColor = "#" + currentId;
+          this.style.color = contrastingColor(currentId);
+          addInnerHTML(this, "#" + currentId);
         }
       });
     }); // 클릭 이벤트 리스너 종료

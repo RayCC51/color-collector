@@ -10,6 +10,10 @@ function insertRow() {
   const columnCount = table.getAttribute("column");
   let rowCount = table.getAttribute("row");
 
+  if (rowIndex == rowCount) {
+    row.setAttribute("value", parseInt(rowCount) + 1);
+  }
+
   for (let i = 0; i < columnCount; i++) {
     const newCell = newRow.insertCell();
     newCell.innerHTML = "*"; // 새 데이터 추가
@@ -30,8 +34,11 @@ function insertColumn() {
   const col = document.getElementById("colIndex");
   const colIndex = parseInt(col.value);
 
-  const rowCount = table.getAttribute("row");
   let columnCount = table.getAttribute("column");
+
+  if (colIndex == columnCount) {
+    col.setAttribute("value", parseInt(columnCount) + 1);
+  }
 
   // 모든 행에 새로운 셀 추가
   for (let i = 0; i < table.rows.length; i++) {
@@ -58,12 +65,14 @@ function delRow() {
 
   table.deleteRow(rowIndex - 1);
 
-  rowCount--;
-  table.setAttribute("row", rowCount);
-  row.setAttribute("max", rowCount);
+  if (rowCount > 0) {
+    rowCount--;
+    table.setAttribute("row", rowCount);
+    row.setAttribute("max", rowCount);
 
-  if (row.getAttribute("value") > rowCount) {
-    row.setAttribute("value", rowCount);
+    if (row.getAttribute("value") > rowCount) {
+      row.setAttribute("value", rowCount);
+    }
   }
 
   console.log("delete row", rowIndex);
@@ -81,13 +90,14 @@ function delCol() {
     table.rows[i].deleteCell(colIndex - 1);
   }
 
-  columnCount--;
-  table.setAttribute("column", columnCount);
-  col.setAttribute("max", columnCount);
+  if (columnCount > 0) {
+    columnCount--;
+    table.setAttribute("column", columnCount);
+    col.setAttribute("max", columnCount);
 
-  if (col.getAttribute("value") > columnCount) {
-    col.setAttribute("value", columnCount);
+    if (col.getAttribute("value") > columnCount) {
+      col.setAttribute("value", columnCount);
+    }
   }
-
   console.log("delete column", colIndex);
 }

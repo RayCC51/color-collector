@@ -1,40 +1,50 @@
 function insertRow() {
-  //   const table = document.getElementById("colorTable");
-  //   const rowIndex = parseInt(document.getElementById("rowIndex").value);
-  //   const newRow = table.insertRow(rowIndex);
-
-  //   // 새로운 행에 셀 추가
-  //   for (let i = 0; i < table.rows[0].cells.length; i++) {
-  //     const newCell = newRow.insertCell();
-  //     newCell.innerHTML = "새 데이터"; // 새 데이터 추가
-  //     console.log("add new row at: ", rowIndex);
-  //   }
-
-  // Find a <table> element with id="myTable":
+  // Find a <table> element with id="colorTable":
   const table = document.getElementById("colorTable");
-  const rowIndex = parseInt(document.getElementById("rowIndex").value);
+  const row = document.getElementById("rowIndex");
+  const rowIndex = parseInt(row.value);
 
-  // Create an empty <tr> element and add it to the 1st position of the table:
-  const row = table.insertRow(rowIndex);
+  // Create an empty <tr> element and add it to the specified position of the table:
+  const newRow = table.insertRow(rowIndex);
 
-  console.log(table.rows[rowIndex].cells.length);
-  // FIXME: always 0: <table> need has width, height attribute
+  const columnCount = table.getAttribute("column");
+  let rowCount = table.getAttribute("row");
 
-  for (let i = 0; i < table.rows[rowIndex].cells.length; i++) {
+  for (let i = 0; i < columnCount; i++) {
     const newCell = newRow.insertCell();
-    newCell.innerHTML = "새 데이터"; // 새 데이터 추가
-    console.log("add new row at: ", rowIndex);
+    newCell.innerHTML = ""; // 새 데이터 추가
+    newCell.classList.add("colorBox");
   }
+
+  rowCount++;
+  table.setAttribute("row", rowCount);
+  row.setAttribute("max", rowCount);
+
+  console.log("add new row at: ", rowIndex);
+
+  addClickEventToCells();
 }
 
 function insertColumn() {
   const table = document.getElementById("colorTable");
-  const colIndex = parseInt(document.getElementById("colIndex").value);
+  const col = document.getElementById("colIndex");
+  const colIndex = parseInt(col.value);
+
+  const rowCount = table.getAttribute("row");
+  let columnCount = table.getAttribute("column");
 
   // 모든 행에 새로운 셀 추가
   for (let i = 0; i < table.rows.length; i++) {
     const newCell = table.rows[i].insertCell(colIndex);
-    newCell.innerHTML = "새 데이터"; // 새 데이터 추가
-    console.log("add new column at ", colIndex);
+    newCell.innerHTML = ""; // 새 데이터 추가
+    newCell.classList.add("colorBox");
   }
+
+  columnCount++;
+  table.setAttribute("column", columnCount);
+  col.setAttribute("max", columnCount);
+
+  console.log("add new column at ", colIndex);
+
+  addClickEventToCells();
 }

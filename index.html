@@ -8,21 +8,21 @@
   </head>
   <body>
     <div id="info">
-      <form id="fileContainer">
-        <label for="fileInput">Open your <em>.csv</em> file: </label>
-        <input type="file" id="fileInput" accept=".csv" />
-        <label for="fileOutput">Download your file <em>.csv</em></label>
-        <button type="button" id="fileOutput">Download</button>
-      </form>
+      <label for="fileInput">Open your <em>.csv</em> file: </label>
+      <input type="file" id="fileInput" accept=".csv" />
+      <br />
+      <label for="fileOutput">Download your file <em>.csv</em></label>
+      <button type="button" id="fileOutput">Download</button>
+      <br />
       <button type="button" id="hideText">Hide Text</button>
       <button type="button" id="clearTable">Clear Table</button>
       <br />
       <label for="rowIndex">Row index:</label>
-      <input type="number" id="rowIndex" value="0" min="0" />
-      <button onclick="insertRow()">Insert</button>
+      <input type="number" id="rowIndex" value="1" min="1" max="3" />
+      <button onclick="insertRow()">Insert bottom</button>
       <label for="colIndex">Column index:</label>
-      <input type="number" id="colIndex" value="0" min="0" />
-      <button onclick="insertColumn()">Insert</button>
+      <input type="number" id="colIndex" value="1" min="1" max="3" />
+      <button onclick="insertColumn()">Insert right</button>
     </div>
 
     <div id="tableContainer"></div>
@@ -30,6 +30,8 @@
     <script src="lib/parsingCSV.js"></script>
     <script src="lib/ntc.js"></script>
     <script src="lib/blackwhite.js"></script>
+    <script src="event.js"></script>
+    <script src="generateTable.js"></script>
     <script src="expandTable.js"></script>
     <script src="script.js"></script>
     <script src="export.js"></script>

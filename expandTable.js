@@ -62,7 +62,11 @@ function delRow() {
   table.setAttribute("row", rowCount);
   row.setAttribute("max", rowCount);
 
-  console.log("delete row");
+  if (row.getAttribute("value") > rowCount) {
+    row.setAttribute("value", rowCount);
+  }
+
+  console.log("delete row", rowIndex);
 }
 
 function delCol() {
@@ -81,5 +85,9 @@ function delCol() {
   table.setAttribute("column", columnCount);
   col.setAttribute("max", columnCount);
 
-  console.log("delete column");
+  if (col.getAttribute("value") > columnCount) {
+    col.setAttribute("value", columnCount);
+  }
+
+  console.log("delete column", colIndex);
 }

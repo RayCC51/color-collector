@@ -1,6 +1,13 @@
 body {
-  background-color: #3f3c3c;
-  color: white;
+  background-color: white;
+  color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #3f3c3c;
+    color: white;
+  }
 }
 
 table {

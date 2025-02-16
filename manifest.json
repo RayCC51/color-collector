@@ -1,7 +1,6 @@
 {
   "name": "Color Collector",
   "short_name": "Color",
-  "start_url": "/",
   "display": "standalone",
   "icons": [
     {

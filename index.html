@@ -17,7 +17,7 @@
       sizes="192x192"
     />
     <link rel="stylesheet" href="style.css" />
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="manifest" href="manifest.json" />
   </head>
   <body>
     <div id="info">
@@ -60,7 +60,7 @@
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
           navigator.serviceWorker
-            .register("/color-collector/service-worker.js")
+            .register("service-worker.js")
             .then((registration) => {
               console.log(
                 "Service Worker registered with scope:",

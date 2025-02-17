@@ -2,6 +2,8 @@
   "name": "Color Collector",
   "short_name": "Color",
   "display": "standalone",
+  "scope": "/color-collector/",
+  "start_url": "/color-collector/index.html",
   "icons": [
     {
       "src": "icon/icon192.png",

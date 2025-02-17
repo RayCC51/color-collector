@@ -1,3 +1,8 @@
+// warning before leaving
+window.addEventListener("beforeunload", function (event) {
+  event.preventDefault();
+});
+
 // hide text button
 document.getElementById("hideText").addEventListener("click", function () {
   const tds = document.querySelectorAll("td");

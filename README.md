@@ -1,3 +1,5 @@
+![screenshot](/README/screenshot.png)
+
 # Color Palette PWA
 
 Feature

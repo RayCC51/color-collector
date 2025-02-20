@@ -4,6 +4,8 @@
   "display": "standalone",
   "scope": "/color-collector/",
   "start_url": "/color-collector/index.html",
+  "background_color": "#ffffff",
+  "theme_color": "#BF9540",
   "icons": [
     {
       "src": "icon/icon192.png",

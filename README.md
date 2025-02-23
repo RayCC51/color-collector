@@ -1,4 +1,4 @@
-![screenshot](/README/screenshot-480.webp)
+![screenshot](/README/screenshot.webp)
 
 # Color Palette PWA
 

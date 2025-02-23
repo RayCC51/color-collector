@@ -3,6 +3,8 @@ window.addEventListener("beforeunload", function (event) {
   event.preventDefault();
 });
 
+let isHidden = false;
+
 // hide text button
 document.getElementById("hideText").addEventListener("click", function () {
   const tds = document.querySelectorAll("td");
@@ -14,8 +16,10 @@ document.getElementById("hideText").addEventListener("click", function () {
 
       if (p.hasAttribute("hidden")) {
         p.removeAttribute("hidden");
+        isHidden = false;
       } else {
         p.setAttribute("hidden", "");
+        isHidden = true;
       }
     });
   });

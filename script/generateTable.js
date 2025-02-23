@@ -59,8 +59,14 @@ function generateTable(data) {
 
 function addInnerHTML(obj, code) {
   if (code) {
-    obj.innerHTML = `<p class="colorName">${
-      ntc.name(code)[1]
-    }</p><p class="colorCode">${code.toUpperCase()}</p>`;
+    if (isHidden) {
+      obj.innerHTML = `<p class="colorName" hidden="">${
+        ntc.name(code)[1]
+      }</p><p class="colorCode" hidden="">${code.toUpperCase()}</p>`;
+    } else {
+      obj.innerHTML = `<p class="colorName">${
+        ntc.name(code)[1]
+      }</p><p class="colorCode">${code.toUpperCase()}</p>`;
+    }
   }
 }

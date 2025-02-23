@@ -60,7 +60,11 @@ function addClickEventToCells() {
             } else {
               console.log("invalid color: ", newId);
               // remove
-              this.innerHTML = "*";
+              if (isHidden) {
+                this.innerHTML = "<p hidden=''>*</p>";
+              } else {
+                this.innerHTML = "<p>*</p>";
+              }
               this.id = "";
               this.removeAttribute("style");
             }
@@ -68,7 +72,11 @@ function addClickEventToCells() {
             this.innerHTML = "#" + currentId; // 유효하지 않은 경우 원래 ID로 복원
           }
         } else {
-          this.innerHTML = "*";
+          if (isHidden) {
+            this.innerHTML = "<p hidden=''>*</p>";
+          } else {
+            this.innerHTML = "<p>*</p>";
+          }
           this.removeAttribute("id");
           this.removeAttribute("style");
         }

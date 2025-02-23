@@ -8,4 +8,3 @@ Feature
 - export `.csv` file
 - show color name
 - no cookie
-- installable pwa
